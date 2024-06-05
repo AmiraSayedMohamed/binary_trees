@@ -1,17 +1,18 @@
 #include <stdlib.h>
 
 /**
- * binary_tree_preorder - Performs a pre-order traversal of a binary tree
- * @tree: Pointer to the root node of the tree to traverse
- * @func: Pointer to a function to call for each node
+ * binary_tree_preorder - Embarks on a pre-order expedition
+ * @tree: The noble root node
+ * @func: The function to be summoned at each node
+ *
+ * Return: Void, for the journey's purpose is exploration, not conquest
  */
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 {
-	if (tree)
-	{
-		func(tree->n);
-		binary_tree_preorder(tree->left, func);
-		binary_tree_preorder(tree->right, func);
-	}
+	if (!tree || !func)
+		return;
+	func(tree->n);
+	binary_tree_preorder(tree->left, func);
+	binary_tree_preorder(tree->right, func);
 }
 
